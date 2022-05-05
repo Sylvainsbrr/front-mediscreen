@@ -3,18 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PatientComponent } from './model/patient/patient.component';
-import { PatientAddComponent } from './patient-add/patient-add/patient-add.component';
+import { PatientEditComponent } from './patient-edit/patient-edit.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
+import { PatientDetailComponent } from './patient-detail/patient-detail.component';
+import { PatientAddComponent } from './patient-add/patient-add.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PatientComponent,
-    PatientAddComponent
+    PatientAddComponent,
+    PatientEditComponent,
+    PatientListComponent,
+    PatientDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
