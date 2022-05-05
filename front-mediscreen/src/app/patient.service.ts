@@ -18,23 +18,23 @@ export class PatientService {
   // PATIENT
 
   getPatients(): Observable<Patient[]>{
-    return this.httpClient.get<Patient[]>('http://localhost:8080/patients');
+    return this.httpClient.get<Patient[]>('http://localhost:8081/patients');
   }
 
   getPatient(id: number): Observable<Patient>{
-    return this.httpClient.get<Patient>('http://localhost:8080/patient-info/' + id);
+    return this.httpClient.get<Patient>('http://localhost:8081/patient-info/' + id);
   }
 
   deletePatient(id: number): Observable<Patient>{
-    return this.httpClient.delete<Patient>('http://localhost:8080/patient/' + id);
+    return this.httpClient.delete<Patient>('http://localhost:8081/patient/' + id);
   }
 
   editPatient(id: number, params:any): Observable<any>{
-    return this.httpClient.put<Patient>('http://localhost:8080/patient/' + id, params);
+    return this.httpClient.put<Patient>('http://localhost:8081/patient/' + id, params);
   }
 
   addPatient(params:any): Observable<any>{
-    return this.httpClient.post<Patient>('http://localhost:8080/patient/', params);
+    return this.httpClient.post<Patient>('http://localhost:8081/patient/', params);
   }
 
 }
