@@ -10,6 +10,8 @@ import { PatientAddComponent } from './patient-add/patient-add.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { PatientNoteComponent } from './patient-note/patient-note.component';
+import { PatientReportComponent } from './patient-report/patient-report.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RouterModule } from '@angular/router';
     PatientAddComponent,
     PatientEditComponent,
     PatientListComponent,
-    PatientDetailComponent
+    PatientDetailComponent,
+    PatientNoteComponent,
+    PatientReportComponent
   ],
   imports: [
     BrowserModule,

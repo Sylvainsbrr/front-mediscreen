@@ -30,6 +30,11 @@ export class PatientListComponent implements OnInit {
     this.patientService.deletePatient(id).subscribe(
       reponse => {
         let patientId = String(id);
+        this.patientService.deleteNote(patientId).subscribe(
+          reponse => {
+            this.patients = this.patients.filter(patient => patient.id !== id);
+          }
+        );
       }
     );
   }

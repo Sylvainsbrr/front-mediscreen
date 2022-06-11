@@ -4,6 +4,7 @@ import {Location} from '@angular/common';
 import { Router } from '@angular/router';
 import { Patient } from '../model/patient';
 import { PatientService } from '../patient.service';
+import { Note } from '../model/note';
 
 @Component({
   selector: 'app-patient-add',
@@ -42,6 +43,20 @@ export class PatientAddComponent implements OnInit {
       response => {
         this.patient = response;
         let patientId = String(this.patient.id);
+        this.createPatientNote(patientId);
+        // this.goBack();
+      }
+    );
+  }
+
+  createPatientNote(patientId: string){
+    let newPatientNote: Note = {
+      patientId: patientId,
+      notes:''
+    }
+    this.patientService.saveNote(newPatientNote).subscribe(
+      response => {
+        this.route.navigate(['/patients']);
       }
     );
   }
